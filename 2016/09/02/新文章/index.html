@@ -1,0 +1,842 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="BSBandSDK 文档一、前言BSBandSDK（简称SDK）适用于iOS系统的设备连接对应的蓝牙设备（简称设备），使接入SDK的APP实现调用该蓝牙设备的基本功能，以及APDU相关的指令。主要包含以下功能：
+
+搜索设备
+连接设备
+断开与设备的连接
+读取设备内的运动、睡眠数据
+读取、设置设备的基本参数
+发送、接收APDU指令（需设备支持）
+其他设备支持的功能操作
+
+二、接入说明SDK为静态库文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新文章">
+<meta property="og:url" content="http://zozi.work/2016/09/02/新文章/index.html">
+<meta property="og:site_name" content="zozi.work">
+<meta property="og:description" content="BSBandSDK 文档一、前言BSBandSDK（简称SDK）适用于iOS系统的设备连接对应的蓝牙设备（简称设备），使接入SDK的APP实现调用该蓝牙设备的基本功能，以及APDU相关的指令。主要包含以下功能：
+
+搜索设备
+连接设备
+断开与设备的连接
+读取设备内的运动、睡眠数据
+读取、设置设备的基本参数
+发送、接收APDU指令（需设备支持）
+其他设备支持的功能操作
+
+二、接入说明SDK为静态库文件">
+<meta property="og:updated_time" content="2016-09-02T06:52:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="新文章">
+<meta name="twitter:description" content="BSBandSDK 文档一、前言BSBandSDK（简称SDK）适用于iOS系统的设备连接对应的蓝牙设备（简称设备），使接入SDK的APP实现调用该蓝牙设备的基本功能，以及APDU相关的指令。主要包含以下功能：
+
+搜索设备
+连接设备
+断开与设备的连接
+读取设备内的运动、睡眠数据
+读取、设置设备的基本参数
+发送、接收APDU指令（需设备支持）
+其他设备支持的功能操作
+
+二、接入说明SDK为静态库文件">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://zozi.work/2016/09/02/新文章/"/>
+
+  <title> 新文章 | zozi.work </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zozi.work</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                新文章
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-02T13:37:08+08:00" content="2016-09-02">
+              2016-09-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="BSBandSDK-文档"><a href="#BSBandSDK-文档" class="headerlink" title="BSBandSDK 文档"></a>BSBandSDK 文档</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>BSBandSDK（简称SDK）适用于iOS系统的设备连接对应的蓝牙设备（简称设备），使接入SDK的APP实现调用该蓝牙设备的基本功能，以及APDU相关的指令。主要包含以下功能：</p>
+<ul>
+<li>搜索设备</li>
+<li>连接设备</li>
+<li>断开与设备的连接</li>
+<li>读取设备内的运动、睡眠数据</li>
+<li>读取、设置设备的基本参数</li>
+<li>发送、接收APDU指令（需设备支持）</li>
+<li>其他设备支持的功能操作</li>
+</ul>
+<h2 id="二、接入说明"><a href="#二、接入说明" class="headerlink" title="二、接入说明"></a>二、接入说明</h2><p><strong>SDK为静态库文件加头文件的形式，接入步骤如下：</strong></p>
+<p>1.将.a库文件以及.h头文件导入项目工程<br>2.项目工程的<code>Build Phases</code>中引入依赖库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">libz.tbd</div></pre></td></tr></table></figure>
+<p>3.修改项目的ATS设置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>NSAppTransportSecurity<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>NSAllowsArbitraryLoads<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">true</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>使用SDK的步骤如下：</strong></p>
+<p>1.引用头文件</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"BSBandSDK.h"</span></span></div></pre></td></tr></table></figure>
+<p>2.初始化</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 下面使用的AppID、AppKey为测试专用，请替换为申请到的开发密钥</span></div><div class="line">[BSBandManager initializeWithLicense:license</div><div class="line">                               appID:<span class="string">@"20039"</span></div><div class="line">                              appKey:<span class="string">@"e4126757aff46bedc702027208bd9f34"</span></div><div class="line">                     showSystemAlert:<span class="literal">YES</span>];</div></pre></td></tr></table></figure>
+<p>3.根据需要设置相关代理</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] setDelegate:<span class="keyword">self</span>];</div><div class="line">[[BSBandManager sharedManager] setAPDUDelegate:<span class="keyword">self</span>];</div><div class="line">[[BSBandManager sharedManager] setDFUDelegate:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
+<p>4.根据功能需求，调用相关接口</p>
+<h2 id="三、接口说明"><a href="#三、接口说明" class="headerlink" title="三、接口说明"></a>三、接口说明</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h5 id="1-接口描述"><a href="#1-接口描述" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>初始化SDK库的接口，必须在使用SDK其他功能前调用，仅调用一次。请根据需要调用联网版初始化接口或者非联网版初始化接口。</p>
+</blockquote>
+<h5 id="2-接口示例"><a href="#2-接口示例" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 联网版初始化接口</span></div><div class="line">[BSBandManager initializeWithLicense:license</div><div class="line">                               appID:<span class="string">@"20028"</span></div><div class="line">                              appKey:<span class="string">@"3f64f8af4b522d4ddff15b1ff44dbf8f"</span></div><div class="line">                     showSystemAlert:<span class="literal">YES</span>];</div><div class="line"></div><div class="line"><span class="comment">// 非联网版初始化接口</span></div><div class="line">[BSBandManager initializeWithLicense:license</div><div class="line">                     showSystemAlert:<span class="literal">YES</span>];</div></pre></td></tr></table></figure>
+<h5 id="3-参数说明"><a href="#3-参数说明" class="headerlink" title="3.参数说明"></a>3.参数说明</h5><blockquote>
+<p>license：证书文件<br>appID：开发标识<br>appKey：开发密钥<br>showSystemAlert：手机蓝牙未打开时，是否弹出系统提示框。</p>
+</blockquote>
+<p>===</p>
+<p>###开始搜索设备</p>
+<h5 id="1-接口描述-1"><a href="#1-接口描述-1" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>开启搜索周围的蓝牙设备。</p>
+</blockquote>
+<h5 id="2-接口示例-1"><a href="#2-接口示例-1" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] startDiscoverDevice];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明"><a href="#3-回调说明" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><blockquote>
+<p>搜索到的设备会在下面接口回调<br>peripheral：设备对象<br>RSSI：信号强度<br>注意：如果RSSI值为0，表示该设备已经被系统连接。</p>
+</blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)didDiscoverDevice:(CBPeripheral *)peripheral RSSI:(<span class="built_in">NSNumber</span> *)RSSI;</div></pre></td></tr></table></figure>
+<p>===</p>
+<p>###停止搜索设备</p>
+<h5 id="1-接口描述-2"><a href="#1-接口描述-2" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>停止搜索周围的蓝牙设备。</p>
+</blockquote>
+<h5 id="2-接口示例-2"><a href="#2-接口示例-2" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] stopDiscoverDevice];</div></pre></td></tr></table></figure>
+<p>===</p>
+<p>###连接设备</p>
+<h5 id="1-接口描述-3"><a href="#1-接口描述-3" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>连接指定的设备。</p>
+</blockquote>
+<h5 id="2-接口示例-3"><a href="#2-接口示例-3" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] connectDevice:device isFirst:<span class="literal">NO</span>];</div></pre></td></tr></table></figure>
+<h5 id="3-参数说明-1"><a href="#3-参数说明-1" class="headerlink" title="3.参数说明"></a>3.参数说明</h5><blockquote>
+<p>isFirst：是否新连接设备。<br>连接蓝牙设备时，有一个身份认证的过程，SDK会给蓝牙设备发送一个识别码，蓝牙设备确认才能连接成功，同时会记住该识别码。对于同一个蓝牙设备，第二次连接时，该参数传NO，SDK将会发送与上一次相同的识别码，蓝牙设备接收到相同的识别码则会跳过验证过程，直接连接成功。注意，该参数传YES时，每次都会发送不同的识别码。</p>
+</blockquote>
+<h5 id="4-回调说明"><a href="#4-回调说明" class="headerlink" title="4.回调说明"></a>4.回调说明</h5><p>发送六位验证码的回调</p>
+<blockquote>
+<p>App可以指定发送给蓝牙设备的验证码，格式为六位数字的字符串。<br>注意：该验证码并不是身份识别码，仅作为蓝牙设备及App上显示使用。</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">NSString</span> *)didSendValidateCode</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">@"123456"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>成功连接回调</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)didConnectDevice;</div></pre></td></tr></table></figure>
+<p>连接失败回调</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)didFailToConnectDevice;</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="更新设备时间"><a href="#更新设备时间" class="headerlink" title="更新设备时间"></a>更新设备时间</h3><h5 id="1-接口描述-4"><a href="#1-接口描述-4" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>更新设备的当前时间</p>
+</blockquote>
+<h5 id="2-接口示例-4"><a href="#2-接口示例-4" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager updateDeviceTime:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="读取设备当前电量"><a href="#读取设备当前电量" class="headerlink" title="读取设备当前电量"></a>读取设备当前电量</h3><h5 id="1-接口描述-5"><a href="#1-接口描述-5" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备的电池电量</p>
+</blockquote>
+<h5 id="2-接口示例-5"><a href="#2-接口示例-5" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager getDeviceBattery:^(<span class="built_in">NSError</span> *error, <span class="keyword">int</span> battery) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-1"><a href="#3-回调说明-1" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><blockquote>
+<p>battery：剩余电量百分比。例：80（表示剩余80%电量）</p>
+</blockquote>
+<p>===</p>
+<h3 id="读取设备信息"><a href="#读取设备信息" class="headerlink" title="读取设备信息"></a>读取设备信息</h3><h5 id="1-接口描述-6"><a href="#1-接口描述-6" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备的硬件、固件等信息</p>
+</blockquote>
+<h5 id="2-接口示例-6"><a href="#2-接口示例-6" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager getDeviceInfo:^(<span class="built_in">NSError</span> *error, BSDeviceInfo *deviceInfo) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-2"><a href="#3-回调说明-2" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>BSDeviceInfo</code>包含了设备信息，具体参数如下：</p>
+<ul>
+<li><strong>deviceType</strong><br>  设备类型，区分不同类型的设备。</li>
+<li><strong>majorVersion</strong><br>  固件主版本号。</li>
+<li><strong>minorVersion</strong><br>  固件副版本号。<br>  <code>例：主版本号：6，副版本号：41，则固件版本为6.41</code></li>
+<li><strong>btAddress</strong><br>  设备的蓝牙MAC地址。</li>
+<li><strong>hasScreen</strong><br>  设备是否有屏幕。</li>
+<li><strong>hasVibrator</strong><br>  设备是否支持振动。</li>
+<li><strong>supportAlarm</strong><br>  设备是否支持闹钟功能。</li>
+<li><strong>supportAlert</strong><br>  设备是否支持久坐提醒功能。</li>
+<li><strong>supportANCS</strong><br>  设备是否支持来电、消息提醒功能。</li>
+<li><strong>supportWechat</strong><br>  设备是否支持微信运动。</li>
+<li><strong>supportAPDU</strong><br>  设备是否支持APDU指令。</li>
+</ul>
+<p>===</p>
+<h3 id="读取用户信息"><a href="#读取用户信息" class="headerlink" title="读取用户信息"></a>读取用户信息</h3><h5 id="1-接口描述-7"><a href="#1-接口描述-7" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备内存储的用户信息</p>
+</blockquote>
+<h5 id="2-接口示例-7"><a href="#2-接口示例-7" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] getUserInfo:^(<span class="built_in">NSError</span> *error, BSUserInfo *userInfo) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-3"><a href="#3-回调说明-3" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>BSUserInfo</code>包含了用户信息，具体参数如下：</p>
+<ul>
+<li><strong>height</strong><br>  身高 单位：厘米。</li>
+<li><strong>weight</strong><br>  体重 单位：千克。</li>
+<li><strong>age</strong><br>  年龄。</li>
+<li><strong>sex</strong><br>  性别 1:男 2:女。</li>
+<li><strong>walkingLength</strong><br>  走路步长 单位：厘米。</li>
+<li><strong>runningLength</strong><br>  跑步步长 单位：厘米。</li>
+</ul>
+<p>===</p>
+<h3 id="更新用户信息"><a href="#更新用户信息" class="headerlink" title="更新用户信息"></a>更新用户信息</h3><h5 id="1-接口描述-8"><a href="#1-接口描述-8" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>更新设备内存储的用户信息</p>
+</blockquote>
+<h5 id="2-接口示例-8"><a href="#2-接口示例-8" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] updateUserInfo:userInfo completion:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="读取ANCS设置"><a href="#读取ANCS设置" class="headerlink" title="读取ANCS设置"></a>读取ANCS设置</h3><h5 id="1-接口描述-9"><a href="#1-接口描述-9" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备当前的来电、消息提醒设置</p>
+</blockquote>
+<h5 id="2-接口示例-9"><a href="#2-接口示例-9" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] getANCSStatus:^(<span class="built_in">NSError</span> *error, BSANCSStatus status) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-4"><a href="#3-回调说明-4" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><blockquote>
+<p>BSANCSStatusOFF：来电提醒、消息提醒关闭<br>BSANCSStatusAllOn：来电提醒、消息提醒打开<br>BSANCSStatusCallON：来电提醒打开、消息提醒关闭<br>BSANCSStatusMessageON：来电提醒关闭、消息提醒打开</p>
+</blockquote>
+<p>===</p>
+<h3 id="更新ANCS设置"><a href="#更新ANCS设置" class="headerlink" title="更新ANCS设置"></a>更新ANCS设置</h3><h5 id="1-接口描述-10"><a href="#1-接口描述-10" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>更新设备的来电、消息提醒设置</p>
+</blockquote>
+<h5 id="2-接口示例-10"><a href="#2-接口示例-10" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] updateANCSStatus:status completion:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="读取闹钟设置"><a href="#读取闹钟设置" class="headerlink" title="读取闹钟设置"></a>读取闹钟设置</h3><h5 id="1-接口描述-11"><a href="#1-接口描述-11" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备的闹钟设置</p>
+</blockquote>
+<h5 id="2-接口示例-11"><a href="#2-接口示例-11" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] getAlarmConfig:^(<span class="built_in">NSError</span> *error, BSAlarm *alarm) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-5"><a href="#3-回调说明-5" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>BSAlarm</code>包含了闹钟设置信息，具体参数如下：</p>
+<ul>
+<li><strong>hour</strong><br>  小时。</li>
+<li><strong>minute</strong><br>  分钟。</li>
+<li><strong>dayFlag</strong><br>  各天开关。</li>
+<li><strong>enable</strong><br>  总开关。</li>
+</ul>
+<p>===</p>
+<h3 id="更新闹钟设置"><a href="#更新闹钟设置" class="headerlink" title="更新闹钟设置"></a>更新闹钟设置</h3><h5 id="1-接口描述-12"><a href="#1-接口描述-12" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>更新设备的闹钟设置</p>
+</blockquote>
+<h5 id="2-接口示例-12"><a href="#2-接口示例-12" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] updateAlarmConfig:alarm completion:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例：设置每个星期一、二早上八点半的闹钟参数如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">alarm.hour = <span class="number">8</span>;</div><div class="line">alarm.minute = <span class="number">30</span>;</div><div class="line">alarm.dayFlag = BSDayMon &amp; BSDayTues;</div><div class="line">alarm.enable = <span class="literal">YES</span>;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>===</p>
+<h3 id="读取久坐提醒设置"><a href="#读取久坐提醒设置" class="headerlink" title="读取久坐提醒设置"></a>读取久坐提醒设置</h3><h5 id="1-接口描述-13"><a href="#1-接口描述-13" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备的久坐提醒设置</p>
+</blockquote>
+<h5 id="2-接口示例-13"><a href="#2-接口示例-13" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] getAlertConfig:^(<span class="built_in">NSError</span> *error, BSAlert *alert) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-6"><a href="#3-回调说明-6" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>BSAlert</code>包含了久坐提醒设置信息，具体参数如下：</p>
+<ul>
+<li><strong>beginHour</strong><br>  开始时间（小时）。</li>
+<li><strong>endHour</strong><br>  结束时间（小时）。</li>
+<li><strong>interval</strong><br>  提醒间隔（分钟）。取值范围：10,20,30,40,50,60,70,80,90,100,110,120</li>
+<li><strong>dayFlag</strong><br>  各天开关。</li>
+<li><strong>enable</strong><br>  总开关。</li>
+</ul>
+<p>===</p>
+<h3 id="更新久坐提醒设置"><a href="#更新久坐提醒设置" class="headerlink" title="更新久坐提醒设置"></a>更新久坐提醒设置</h3><h5 id="1-接口描述-14"><a href="#1-接口描述-14" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>更新设备的久坐提醒设置</p>
+</blockquote>
+<h5 id="2-接口示例-14"><a href="#2-接口示例-14" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] updateAlertConfig:alert completion:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例：每个星期一、二的早上9点至下午6点开启久坐提醒，提醒间隔为一小时，设置参数如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">alert.beginHour = <span class="number">9</span>;</div><div class="line">alert.endHour = <span class="number">18</span>;</div><div class="line">alert.interval = <span class="number">30</span>;</div><div class="line">alert.dayFlag = BSDayMon &amp; BSDayTues;</div><div class="line">alert.enable = <span class="literal">YES</span>;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>===</p>
+<h3 id="读取运动与睡眠数据"><a href="#读取运动与睡眠数据" class="headerlink" title="读取运动与睡眠数据"></a>读取运动与睡眠数据</h3><h5 id="1-接口描述-15"><a href="#1-接口描述-15" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备内存储的运动与睡眠数据</p>
+</blockquote>
+<h5 id="2-接口示例-15"><a href="#2-接口示例-15" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager getSportAndSleepData:^(<span class="built_in">NSError</span> *error, <span class="built_in">NSArray</span> *sportDataArray, BSSleepData *sleepData) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-7"><a href="#3-回调说明-7" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>sportDataArray</code>为运动数据<code>BSSportData</code>数组，具体参数如下：</p>
+<ul>
+<li><strong>time</strong><br>  运动周期的起始时间（一个周期为十分钟）。单位：unix时间戳</li>
+<li><strong>step</strong><br>  该运动周期产生的步数。单位：步</li>
+<li><strong>calorie</strong><br>  该运动周期产生的卡路里消耗。单位：千卡</li>
+<li><strong>distance</strong><br>  该运动周期产生的运动里程。单位：米</li>
+</ul>
+<p><code>BSSleepData</code>为前一晚的睡眠数据，具体参数如下：</p>
+<ul>
+<li><strong>gotoSleepPoint</strong><br>  入睡时间。单位：unix时间戳</li>
+<li><strong>getUpPoint</strong><br>  起床时间。单位：步</li>
+<li><strong>lightSleepTime</strong><br>  浅度睡眠时间。单位：千卡</li>
+<li><strong>deepSleepTime</strong><br>  深度睡眠时间。单位：米</li>
+<li><strong>wakeupTime</strong><br>  起夜时间。单位：米</li>
+<li><p><strong>detailArray</strong><br>  详细睡眠数据。为<code>BSSleepDetail</code>数组，参数如下：</p>
+<ul>
+<li><strong>time</strong><br>  睡眠状态起始时间</li>
+<li><p><strong>state</strong><br>  睡眠状态。详见<code>BSSleepState</code>枚举</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">BSSleepStateGotoSleep       入睡</div><div class="line">BSSleepStateLightSleep      浅度睡眠</div><div class="line">BSSleepStateDeepSleep       深度睡眠</div><div class="line">BSSleepStateWakeup          起夜</div><div class="line">BSSleepStateGetUp           起床</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4.注意事项"></a>4.注意事项</h5><blockquote>
+<p><strong>运动数据</strong>会一直存储在设备中，直到调用清除指令才会清空。设备存储满后将不再记录运动数据，因此建议每次读取完数据后存入本地，并且清除设备中的运动数据。<br><strong>睡眠数据</strong>只会读取到前一天晚上的数据，如果读出的睡眠数据为空，表示昨晚没有检测到睡眠行为。</p>
+</blockquote>
+<p>===</p>
+<h3 id="清除运动与睡眠数据"><a href="#清除运动与睡眠数据" class="headerlink" title="清除运动与睡眠数据"></a>清除运动与睡眠数据</h3><h5 id="1-接口描述-16"><a href="#1-接口描述-16" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备内存储的运动与睡眠数据</p>
+</blockquote>
+<h5 id="2-接口示例-16"><a href="#2-接口示例-16" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager clearSportAndSleepData:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="读取实时运动数据"><a href="#读取实时运动数据" class="headerlink" title="读取实时运动数据"></a>读取实时运动数据</h3><h5 id="1-接口描述-17"><a href="#1-接口描述-17" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>读取设备当天的实时运动数据。设备内的运动数据每十分钟存储一次，因此从读取运动数据接口中获得的数据并不实时，可能会和设备实际显示的数据有偏差。该接口能获取设备上实时显示的运动数据。</p>
+</blockquote>
+<h5 id="2-接口示例-17"><a href="#2-接口示例-17" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager getRealtimeSportData:^(<span class="built_in">NSError</span> *error, <span class="keyword">int</span> step, <span class="keyword">float</span> calorie, <span class="keyword">float</span> distance) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-8"><a href="#3-回调说明-8" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><blockquote>
+<p>step：步数。单位：步<br>calorie：卡路里。单位：千卡<br>distance：里程。单位：米</p>
+</blockquote>
+<p>===</p>
+<h3 id="清除实时运动数据"><a href="#清除实时运动数据" class="headerlink" title="清除实时运动数据"></a>清除实时运动数据</h3><h5 id="1-接口描述-18"><a href="#1-接口描述-18" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>清除设备上显示的实时运动数据。</p>
+</blockquote>
+<h5 id="2-接口示例-18"><a href="#2-接口示例-18" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[BSBandManager sharedManager] clearRealtimeSportData:^(<span class="built_in">NSError</span> *error) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="检查固件版本"><a href="#检查固件版本" class="headerlink" title="检查固件版本"></a>检查固件版本</h3><h5 id="1-接口描述-19"><a href="#1-接口描述-19" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>检查设备当前的固件版本是否需要升级</p>
+</blockquote>
+<h5 id="2-接口示例-19"><a href="#2-接口示例-19" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[_bandManager checkBandFirmwareVersion:^(<span class="built_in">NSError</span> *error, <span class="built_in">NSDictionary</span> *response) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-9"><a href="#3-回调说明-9" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><p><code>response</code>字典里包含了以下信息：</p>
+<ul>
+<li><strong>BSResponseMajorVersionName</strong><br>  当前固件主版本</li>
+<li><strong>BSResponseMinorVersionName</strong><br>  当前固件副版本</li>
+<li><strong>BSResponseLatestMajorVersionName</strong><br>  最新固件主版本</li>
+<li><strong>BSResponseLatestMinorVersionName</strong><br>  最新固件副版本</li>
+<li><strong>BSResponseNeedUpdateName</strong><br>  是否需要升级</li>
+<li><strong>BSResponseVersionPropertyName</strong><br>  该版本固件特性，<code>BSFirmwareProperty</code>定义如下：<ul>
+<li><strong>BSFirmwarePropertyOptional</strong><br>可选升级</li>
+<li><strong>BSFirmwarePropertyRequired</strong><br>必须升级</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>判断固件版本的流程如下：<br>请先判断error是否为空，不为空时请根据返回的错误码排查错误。error为空说明请求固件升级服务器成功，返回字典中的字段有两种情况：<br>1、固件已经是最新的。<br>此时<code>BSResponseNeedUpdateName</code>为<code>NO</code>，<br><code>BSResponseMajorVersionName</code>和<code>BSResponseMinorVersionName</code>为当前固件版本。<br>2、有需要更新的固件。<br>此时<code>BSResponseNeedUpdateName</code>为<code>YES</code>，<br><code>BSResponseMajorVersionName</code>和<code>BSResponseMinorVersionName</code>为当前固件版本，<br><code>BSResponseLatestMajorVersionName</code>和<code>BSResponseLatestMinorVersionName</code>为最新固件版本，<br><code>BSResponseVersionPropertyName</code>为版本特性，可以根据该参数来判断是否需要做强制升级的逻辑。</p>
+</blockquote>
+<p>===</p>
+<h3 id="开始升级固件"><a href="#开始升级固件" class="headerlink" title="开始升级固件"></a>开始升级固件</h3><h5 id="1-接口描述-20"><a href="#1-接口描述-20" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>开始升级固件，调用此接口前，<strong>必须先调用检查固件版本的接口</strong>。</p>
+</blockquote>
+<h5 id="2-接口示例-20"><a href="#2-接口示例-20" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[_bandManager startDFUWithDelegate:<span class="keyword">self</span>];</div></pre></td></tr></table></figure>
+<h5 id="3-回调说明-10"><a href="#3-回调说明-10" class="headerlink" title="3.回调说明"></a>3.回调说明</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 升级已开始</span></div><div class="line">- (<span class="keyword">void</span>)bandDFUDidStart;</div><div class="line"></div><div class="line"><span class="comment">// 升级状态更新</span></div><div class="line">- (<span class="keyword">void</span>)bandDFUDidUpdateState:(BSDFUState)state info:(<span class="built_in">NSDictionary</span> *)info;</div><div class="line"></div><div class="line"><span class="comment">// 升级已完成</span></div><div class="line">- (<span class="keyword">void</span>)bandDFUDidComplete;</div><div class="line"></div><div class="line"><span class="comment">// 升级中断</span></div><div class="line">- (<span class="keyword">void</span>)bandDFUDidCancelWithError:(<span class="built_in">NSError</span> *)error;</div><div class="line"></div><div class="line"><span class="comment">// 升级未能开始</span></div><div class="line">- (<span class="keyword">void</span>)bandDFUNotStartWithError:(<span class="built_in">NSError</span> *)error;</div></pre></td></tr></table></figure>
+<p>===</p>
+<h3 id="SE芯片上下电"><a href="#SE芯片上下电" class="headerlink" title="SE芯片上下电"></a>SE芯片上下电</h3><h5 id="1-接口描述-21"><a href="#1-接口描述-21" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>蓝牙设备内的SE芯片上下电，并返回ATR。</p>
+</blockquote>
+<h5 id="2-接口示例-21"><a href="#2-接口示例-21" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 同步上电接口</span></div><div class="line">- (<span class="built_in">NSData</span> *)syncOpenSEChipWithTimeout:(<span class="built_in">NSTimeInterval</span>)timeout;</div><div class="line"><span class="comment">// 同步下电接口</span></div><div class="line">- (<span class="built_in">BOOL</span>)syncCloseSEChipWithTimeout:(<span class="built_in">NSTimeInterval</span>)timeout;</div><div class="line"><span class="comment">// 异步上电接口</span></div><div class="line">- (<span class="keyword">void</span>)asyncOpenSEChip:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error, <span class="built_in">NSData</span> *atrData))completion;</div><div class="line"><span class="comment">// 异步下电接口</span></div><div class="line">- (<span class="keyword">void</span>)asyncCloseSEChip:(<span class="keyword">void</span>(^)(<span class="built_in">NSError</span> *error))completion;</div></pre></td></tr></table></figure>
+<h5 id="3-参数说明-2"><a href="#3-参数说明-2" class="headerlink" title="3.参数说明"></a>3.参数说明</h5><blockquote>
+<p>atrData：返回的ATR数据。<br>timeout：接口超时时间，单位毫秒。</p>
+</blockquote>
+<p>===</p>
+<h3 id="发送APDU指令"><a href="#发送APDU指令" class="headerlink" title="发送APDU指令"></a>发送APDU指令</h3><h5 id="1-接口描述-22"><a href="#1-接口描述-22" class="headerlink" title="1.接口描述"></a>1.接口描述</h5><blockquote>
+<p>透传APDU指令的接口。</p>
+</blockquote>
+<h5 id="2-接口示例-22"><a href="#2-接口示例-22" class="headerlink" title="2.接口示例"></a>2.接口示例</h5><p>同步接口</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Byte bytes[] = &#123;<span class="number">0x00</span>, <span class="number">0xa4</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x02</span>, <span class="number">0x10</span>, <span class="number">0x01</span>&#125;;</div><div class="line"><span class="built_in">NSData</span> *sendData = [<span class="built_in">NSData</span> dataWithBytes:bytes length:<span class="number">7</span>];</div><div class="line"><span class="built_in">NSData</span> *response = [[BSBandManager sharedManager] syncSendAPDUData:sendData timeout:<span class="number">3</span>];</div></pre></td></tr></table></figure>
+<p>异步接口</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Byte bytes[] = &#123;<span class="number">0x00</span>, <span class="number">0xa4</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x02</span>, <span class="number">0x10</span>, <span class="number">0x01</span>&#125;;</div><div class="line"><span class="built_in">NSData</span> *sendData = [<span class="built_in">NSData</span> dataWithBytes:bytes length:<span class="number">7</span>];</div><div class="line">[[BSBandManager sharedManager] asyncSendAPDUData:sendData</div><div class="line">                                         timeout:<span class="number">3</span></div><div class="line">                                      completion:^(<span class="built_in">NSError</span> *error, <span class="built_in">NSData</span> *responseData) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<h5 id="3-参数说明-3"><a href="#3-参数说明-3" class="headerlink" title="3.参数说明"></a>3.参数说明</h5><blockquote>
+<p>sendData：需要发送的数据。<br>timeout：接口超时时间，单位秒。</p>
+</blockquote>
+<h5 id="4-回调说明-1"><a href="#4-回调说明-1" class="headerlink" title="4.回调说明"></a>4.回调说明</h5><blockquote>
+<p><strong>同步发送接口将直接返回接收到的数据，异步发送接口将在block中回调。</strong><br>error：为空则发送成功。<br>responseData：返回的数据。</p>
+</blockquote>
+<h2 id="四、其他注意事项"><a href="#四、其他注意事项" class="headerlink" title="四、其他注意事项"></a>四、其他注意事项</h2><p>其他接口的使用方法，请参见头文件内的注释，以及Demo源程序中的示例。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/02/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zozi" />
+          <p class="site-author-name" itemprop="name">zozi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BSBandSDK-文档"><span class="nav-number">1.</span> <span class="nav-text">BSBandSDK 文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、接入说明"><span class="nav-number">1.2.</span> <span class="nav-text">二、接入说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、接口说明"><span class="nav-number">1.3.</span> <span class="nav-text">三、接口说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.3.1.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述"><span class="nav-number">1.3.1.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例"><span class="nav-number">1.3.1.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-参数说明"><span class="nav-number">1.3.1.0.3.</span> <span class="nav-text">3.参数说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-1"><span class="nav-number">1.3.1.0.4.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-1"><span class="nav-number">1.3.1.0.5.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明"><span class="nav-number">1.3.1.0.6.</span> <span class="nav-text">3.回调说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-2"><span class="nav-number">1.3.1.0.7.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-2"><span class="nav-number">1.3.1.0.8.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-3"><span class="nav-number">1.3.1.0.9.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-3"><span class="nav-number">1.3.1.0.10.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-参数说明-1"><span class="nav-number">1.3.1.0.11.</span> <span class="nav-text">3.参数说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-回调说明"><span class="nav-number">1.3.1.0.12.</span> <span class="nav-text">4.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新设备时间"><span class="nav-number">1.3.2.</span> <span class="nav-text">更新设备时间</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-4"><span class="nav-number">1.3.2.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-4"><span class="nav-number">1.3.2.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取设备当前电量"><span class="nav-number">1.3.3.</span> <span class="nav-text">读取设备当前电量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-5"><span class="nav-number">1.3.3.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-5"><span class="nav-number">1.3.3.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-1"><span class="nav-number">1.3.3.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取设备信息"><span class="nav-number">1.3.4.</span> <span class="nav-text">读取设备信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-6"><span class="nav-number">1.3.4.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-6"><span class="nav-number">1.3.4.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-2"><span class="nav-number">1.3.4.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取用户信息"><span class="nav-number">1.3.5.</span> <span class="nav-text">读取用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-7"><span class="nav-number">1.3.5.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-7"><span class="nav-number">1.3.5.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-3"><span class="nav-number">1.3.5.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新用户信息"><span class="nav-number">1.3.6.</span> <span class="nav-text">更新用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-8"><span class="nav-number">1.3.6.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-8"><span class="nav-number">1.3.6.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取ANCS设置"><span class="nav-number">1.3.7.</span> <span class="nav-text">读取ANCS设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-9"><span class="nav-number">1.3.7.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-9"><span class="nav-number">1.3.7.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-4"><span class="nav-number">1.3.7.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新ANCS设置"><span class="nav-number">1.3.8.</span> <span class="nav-text">更新ANCS设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-10"><span class="nav-number">1.3.8.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-10"><span class="nav-number">1.3.8.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取闹钟设置"><span class="nav-number">1.3.9.</span> <span class="nav-text">读取闹钟设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-11"><span class="nav-number">1.3.9.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-11"><span class="nav-number">1.3.9.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-5"><span class="nav-number">1.3.9.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新闹钟设置"><span class="nav-number">1.3.10.</span> <span class="nav-text">更新闹钟设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-12"><span class="nav-number">1.3.10.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-12"><span class="nav-number">1.3.10.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取久坐提醒设置"><span class="nav-number">1.3.11.</span> <span class="nav-text">读取久坐提醒设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-13"><span class="nav-number">1.3.11.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-13"><span class="nav-number">1.3.11.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-6"><span class="nav-number">1.3.11.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新久坐提醒设置"><span class="nav-number">1.3.12.</span> <span class="nav-text">更新久坐提醒设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-14"><span class="nav-number">1.3.12.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-14"><span class="nav-number">1.3.12.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取运动与睡眠数据"><span class="nav-number">1.3.13.</span> <span class="nav-text">读取运动与睡眠数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-15"><span class="nav-number">1.3.13.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-15"><span class="nav-number">1.3.13.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-7"><span class="nav-number">1.3.13.0.3.</span> <span class="nav-text">3.回调说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-注意事项"><span class="nav-number">1.3.13.0.4.</span> <span class="nav-text">4.注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除运动与睡眠数据"><span class="nav-number">1.3.14.</span> <span class="nav-text">清除运动与睡眠数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-16"><span class="nav-number">1.3.14.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-16"><span class="nav-number">1.3.14.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取实时运动数据"><span class="nav-number">1.3.15.</span> <span class="nav-text">读取实时运动数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-17"><span class="nav-number">1.3.15.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-17"><span class="nav-number">1.3.15.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-8"><span class="nav-number">1.3.15.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除实时运动数据"><span class="nav-number">1.3.16.</span> <span class="nav-text">清除实时运动数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-18"><span class="nav-number">1.3.16.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-18"><span class="nav-number">1.3.16.0.2.</span> <span class="nav-text">2.接口示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查固件版本"><span class="nav-number">1.3.17.</span> <span class="nav-text">检查固件版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-19"><span class="nav-number">1.3.17.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-19"><span class="nav-number">1.3.17.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-9"><span class="nav-number">1.3.17.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始升级固件"><span class="nav-number">1.3.18.</span> <span class="nav-text">开始升级固件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-20"><span class="nav-number">1.3.18.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-20"><span class="nav-number">1.3.18.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-回调说明-10"><span class="nav-number">1.3.18.0.3.</span> <span class="nav-text">3.回调说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SE芯片上下电"><span class="nav-number">1.3.19.</span> <span class="nav-text">SE芯片上下电</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-21"><span class="nav-number">1.3.19.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-21"><span class="nav-number">1.3.19.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-参数说明-2"><span class="nav-number">1.3.19.0.3.</span> <span class="nav-text">3.参数说明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送APDU指令"><span class="nav-number">1.3.20.</span> <span class="nav-text">发送APDU指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口描述-22"><span class="nav-number">1.3.20.0.1.</span> <span class="nav-text">1.接口描述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-接口示例-22"><span class="nav-number">1.3.20.0.2.</span> <span class="nav-text">2.接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-参数说明-3"><span class="nav-number">1.3.20.0.3.</span> <span class="nav-text">3.参数说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-回调说明-1"><span class="nav-number">1.3.20.0.4.</span> <span class="nav-text">4.回调说明</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、其他注意事项"><span class="nav-number">1.4.</span> <span class="nav-text">四、其他注意事项</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zozi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
